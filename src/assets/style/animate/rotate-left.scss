@@ -1,0 +1,30 @@
+
+.rotate-left-enter-active,
+.rotate-left-leave-active {
+  animation-duration: 1000ms;
+  animation-timing-function: ease;
+  overflow: hidden;
+}
+/* 必须设置，否则会闪屏 */
+.rotate-left-enter {
+  transform: translate3d(100%, 0, 0);
+}
+.rotate-left-leave {
+  transform: translate3d(0, 0, 0);
+}
+.rotate-left-enter-to {
+  transform-origin: 0% 50%;
+	animation-name: rotateRoomLeftIn;
+}
+
+.rotate-left-leave-to {
+  transform-origin: 100% 50%;
+  animation-name: rotateRoomLeftOut;
+}
+
+@keyframes rotateRoomLeftIn {
+	from { opacity: .3; transform: translate3d(100%, 0, 0) rotateY(-90deg); }
+}
+@keyframes rotateRoomLeftOut {
+	to { opacity: .3; transform: translate3d(-100%, 0, 0) rotateY(90deg); }
+}

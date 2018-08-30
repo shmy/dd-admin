@@ -1,0 +1,21 @@
+// 过渡动画 从右入左
+.slide-left-enter-active,
+.slide-left-leave-active {
+  animation-duration: 700ms;
+  animation-timing-function: ease;
+}
+/* 正常进入 */
+.slide-left-enter-active {
+  animation-name: slideLeftIn;
+}
+/* 正常离开 */
+.slide-left-leave-active {
+  animation-name: slideLeftOut;
+}
+
+@keyframes slideLeftIn {
+  from { opacity: .3; transform: translate3d(100%, 0, 0); }
+}
+@keyframes slideLeftOut {
+  to { opacity: .3; transform: translate3d(-100%, 0, 0); }
+}

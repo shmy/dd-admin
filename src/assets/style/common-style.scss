@@ -1,0 +1,25 @@
+// 公共样式 可用于覆盖框架默认样式
+
+.d2-theme-container-main-body{
+  position: relative;
+  top: 0;
+  left: 0;
+  perspective: 1200px;
+}
+.container-component {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.full-page {
+  height: 100%;
+  width: 100%;
+}
+.__ignore {
+  display: none !important;
+}
+
+html, body {
+  overflow: hidden;
+}
