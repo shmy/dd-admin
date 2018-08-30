@@ -290,6 +290,7 @@ export default {
         return
       }
       close()
+      this.$message.success('编辑成功')
       this.fetch()
     }
   }
