@@ -4,8 +4,8 @@ export default {
   namespace: 'user',
   services: {
     // 登录
-    login: (...args) => http.post('/admin/sign_in', ...args),
-    // 登出
-    logout: (...args) => Promise.resolve([1, null])
+    login: (...args) => http.post('/sign_in', ...args),
+    // 用户列表
+    list: (...args) => http.get('/users', ...args)
   }
 }

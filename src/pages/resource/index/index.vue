@@ -124,7 +124,17 @@
       </el-table-column>
       <el-table-column prop="generated_at"
                        label="最后抓取时间"
-                       width="300">
+                       width="150">
+      </el-table-column>
+      <el-table-column prop="generated_at"
+                       label="ID"
+                       width="220">
+        <template slot-scope="scope">
+          <div>
+            <span>{{scope.row._id}}</span>
+            <shmy-copy :text="scope.row._id"></shmy-copy>
+          </div>
+        </template>
       </el-table-column>
       <el-table-column fixed="right"
                        label="操作"
@@ -153,6 +163,8 @@
   </d2-container>
 </template>
 <script>
+import Edit from '@/components/resource/edit'
+import ShmyCopy from '@/components/common/shmy-copy'
 export default {
   data: () => ({
     classifyOptions: [
@@ -214,7 +226,8 @@ export default {
       {'label': '90年代', 'value': '90'},
       {'label': '80年代', 'value': '80'},
       {'label': '70年代', 'value': '70'},
-      {'label': '更早', 'value': '更早'}
+      {'label': '更早', 'value': '更早'},
+      {'label': '其他', 'value': '其他'}
     ],
     areaOptions: [
       {'label': '不限地区', 'value': ''},
@@ -247,7 +260,8 @@ export default {
     items: []
   }),
   components: {
-    'edit': () => import('@/components/resource/edit')
+    'edit': Edit,
+    'shmy-copy': ShmyCopy
   },
   async created () {
     this.fetch()
@@ -303,38 +317,5 @@ export default {
   font-weight: bold;
   color: blue;
   cursor: pointer;
-}
-.fliterbar,
-.pagination {
-  text-align: right;
-  margin-top: 10px;
-  padding: 10px;
-  box-sizing: border-box;
-  background-color: white;
-}
-.fliterbar {
-  text-align: left;
-  margin-top: 0;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: row;
-  .auto {
-    flex: 1;
-    width: 0;
-  }
-  .el-cascader--small, .el-select--small {
-    width: 110px;
-    margin-left: 10px;
-  }
-  .el-cascader--small {
-    &:nth-of-type(1) {
-    margin-left: 0;
-
-    }
-  }
-  .el-input--small {
-    width: 300px;
-    margin-left: 10px;
-  }
 }
 </style>

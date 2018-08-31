@@ -23,3 +23,41 @@
 html, body {
   overflow: hidden;
 }
+
+
+.fliterbar,
+.pagination {
+  text-align: right;
+  margin-top: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: white;
+}
+.fliterbar {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  .auto {
+    flex: 1;
+    width: 0;
+  }
+  .el-cascader--small, .el-select--small {
+    width: 110px;
+    margin-left: 10px;
+    .el-input--small {
+      width: 100%;
+    }
+  }
+  .el-cascader--small {
+    &:nth-of-type(1) {
+    margin-left: 0;
+
+    }
+  }
+  .el-input--small {
+    width: 300px;
+    margin-left: 10px;
+  }
+}

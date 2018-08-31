@@ -14,7 +14,12 @@
           <el-col :span="17">
             <el-form-item label="视频名称">
               <el-input size="small"
-                        v-model="form.name"></el-input>
+                        v-model="form.name">
+
+                <el-button slot="append"
+                           @click="doBaiduSearch(form.name)"
+                           icon="el-icon-search"></el-button>
+              </el-input>
             </el-form-item>
             <el-row>
               <el-col :span="12">
@@ -241,6 +246,9 @@ export default {
         cancel: this.cancel,
         close: this.close
       })
+    },
+    doBaiduSearch (name) {
+      window.open(`https://www.baidu.com/s?wd=${name}`)
     }
   }
 }
