@@ -16,7 +16,7 @@ export default {
   methods: {
     handleCopy () {
       clipboard.writeText(this.text)
-      this.$message.success('复制成功')
+      this.$message.success(this.text + ' 复制成功')
     }
   }
 }
